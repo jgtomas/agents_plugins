@@ -17,6 +17,8 @@
       "Read",
       "Interactive"
     ],
-    "defaultPrompt": "Analyze a Rollbar item and recommend next steps."
+    "defaultPrompt": "Analyze a Rollbar item and recommend next steps.",
+    "logo": "./assets/rollbar-icon.png",
+    "composerIcon": "./assets/rollbar-icon.png"
   }
 }
