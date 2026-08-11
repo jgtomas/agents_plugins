@@ -1,111 +1,40 @@
-# Rollbar Triage Agent Plugin
+# Agent Plugins
 
-This repository contains one portable Agent Plugin with three skills:
+This repository contains portable Agent Plugins and their Codex marketplace
+metadata.
 
-- `rollbar-analyzer`
-- `rollbar-classifier`
-- `rollbar-urgency-assessor`
+## Plugins
 
-The portable plugin uses Rollbar's MCP server via `npx -y @rollbar/mcp-server@latest`.
-The root `plugin.json` and `mcp.json` files follow the Agent Plugins 1.0.0
-format. The `.codex-plugin/` and `.mcp.json` files are retained as Codex
-marketplace adapter metadata.
+- [Rollbar Triage](plugins/rollbar-triage/README.md) — analyze, classify, and prioritize Rollbar errors.
 
-## Requirements
+## Install from GitHub
 
-- An Agent Plugins-compatible client
-- Codex with plugin support (for the local marketplace workflow below)
-- Node.js 20 or 22
-- `npx`
-- A Rollbar read-scope access token
-
-## Configure Rollbar authentication
-
-Agent Plugins does not define a portable credential-reference field. Configure
-Rollbar authentication using the mechanism supported by your client. For the
-Codex/Rollbar MCP server, use one of the following before starting Codex:
-
-For one Rollbar project, export the access token before launching Codex:
+After cloning or pushing this repository, register the repository as a Codex
+marketplace and install the plugin:
 
 ```bash
-export ROLLBAR_ACCESS_TOKEN='YOUR_ROLLBAR_READ_TOKEN'
-```
-
-Do not commit your real token to this plugin directory.
-
-Alternatively, create `~/.rollbar-mcp.json` for one or multiple projects.
-
-Single project:
-
-```json
-{ "token": "YOUR_ROLLBAR_READ_TOKEN" }
-```
-
-Multiple projects:
-
-```json
-{
-  "projects": [
-    { "name": "backend", "token": "TOKEN_1" },
-    { "name": "frontend", "token": "TOKEN_2" }
-  ]
-}
-```
-
-## Install as a local Codex marketplace
-
-From the repository root:
-
-```bash
-codex plugin marketplace add "$(pwd)"
-codex plugin list
-```
-
-Then install the plugin using the marketplace name:
-
-```bash
+codex plugin marketplace add https://github.com/jgtomas/agents_plugins.git
 codex plugin add rollbar-triage@local-rollbar-plugins
 ```
 
-Start a new Codex thread/session after installation so the skills and MCP tools are loaded.
+For local development from this checkout:
 
-## Try it
-
-Examples:
-
-```text
-Analyze Rollbar item 123456.
+```bash
+codex plugin marketplace add "$(pwd)"
+codex plugin add rollbar-triage@local-rollbar-plugins
 ```
 
-```text
-Classify Rollbar item 123456.
-```
+Start a new Codex thread after installation so updated skills and MCP tools are
+loaded.
+
+## Repository layout
 
 ```text
-Assess the urgency of Rollbar item 123456.
+.
+├── .agents/plugins/marketplace.json
+└── plugins/
+    └── rollbar-triage/
 ```
-
-Codex should select the corresponding skill and use the Rollbar MCP tools.
-
-## Portable package structure
-
-```text
-plugins/
-└── rollbar-triage/
-    ├── plugin.json
-    ├── mcp.json
-    └── skills/
-        ├── rollbar-analyzer/
-        │   └── SKILL.md
-        ├── rollbar-classifier/
-        │   └── SKILL.md
-        └── rollbar-urgency-assessor/
-            └── SKILL.md
-```
-
-The repository also contains `.agents/plugins/marketplace.json` and the
-Codex-specific adapter files used by the local Codex marketplace workflow.
 
 See the [Agent Plugins specification](https://agent-plugins.org/specification)
-and [Agent Skills specification](https://agentskills.io/specification) for the
-portable format requirements.
+for the portable package format.
