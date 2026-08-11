@@ -1,14 +1,22 @@
 {
   "name": "rollbar-triage",
-  "version": "1.0.0",
+  "version": "1.0.0+codex.20260811121819",
   "description": "Analyze, classify, and prioritize Rollbar errors using the official Rollbar MCP server.",
+  "author": {
+    "name": "Local"
+  },
   "skills": "./skills/",
   "mcpServers": "./.mcp.json",
   "interface": {
     "displayName": "Rollbar Triage",
     "shortDescription": "Analyze, classify, and prioritize Rollbar errors",
+    "longDescription": "Analyze Rollbar items, classify likely causes, and assess urgency using the Rollbar MCP server.",
     "developerName": "Local",
     "category": "Developer Tools",
-    "capabilities": ["Read", "Interactive"]
+    "capabilities": [
+      "Read",
+      "Interactive"
+    ],
+    "defaultPrompt": "Analyze a Rollbar item and recommend next steps."
   }
 }
