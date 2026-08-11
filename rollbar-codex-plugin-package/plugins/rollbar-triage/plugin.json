@@ -1,0 +1,13 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "rollbar-triage",
+  "version": "1.0.0",
+  "description": "Analyze, classify, and prioritize Rollbar errors using the Rollbar MCP server.",
+  "repository": "https://github.com/jgtomas/agents_plugins",
+  "keywords": [
+    "rollbar",
+    "error-triage",
+    "observability",
+    "incident-response"
+  ]
+}
