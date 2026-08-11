@@ -1,0 +1,20 @@
+{
+  "name": "local-rollbar-plugins",
+  "interface": {
+    "displayName": "Local Rollbar Plugins"
+  },
+  "plugins": [
+    {
+      "name": "rollbar-triage",
+      "source": {
+        "source": "local",
+        "path": "./plugins/rollbar-triage"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}
