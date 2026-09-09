@@ -1,0 +1,49 @@
+{
+  "name": "superpowers-ruby",
+  "version": "7.5.0",
+  "description": "Ruby/Rails skills library for Codex: TDD with Minitest, Rails patterns, Hotwire, Brakeman, Sandi Metz rules, 37signals style, and proven development workflows based on Jesse Vincent's superpowers",
+  "author": {
+    "name": "Lucian Ghinda",
+    "email": "lucian.ghinda@gmail.com"
+  },
+  "homepage": "https://github.com/jgtomas/superpowers-ruby",
+  "repository": "https://github.com/jgtomas/agents_plugins",
+  "license": "MIT",
+  "keywords": [
+    "skills",
+    "ruby",
+    "rails",
+    "tdd",
+    "minitest",
+    "hotwire",
+    "turbo",
+    "stimulus",
+    "brakeman",
+    "debugging",
+    "collaboration",
+    "best-practices",
+    "workflows"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Superpowers Ruby",
+    "shortDescription": "Ruby/Rails development workflows for Codex",
+    "longDescription": "Ruby/Rails skills library for Codex: TDD with Minitest, Rails patterns, Hotwire, Brakeman, Sandi Metz rules, 37signals style, and proven development workflows based on Jesse Vincent's superpowers.",
+    "developerName": "Lucian Ghinda",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Help me plan a Ruby or Rails feature.",
+      "Debug this Ruby or Rails issue systematically.",
+      "Review this Rails change for quality and security."
+    ],
+    "brandColor": "#E0115F",
+    "composerIcon": "./assets/superpowers-ruby.svg",
+    "logo": "./assets/superpowers-ruby.svg",
+    "screenshots": []
+  }
+}
