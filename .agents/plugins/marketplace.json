@@ -1,7 +1,7 @@
 {
-  "name": "local-rollbar-plugins",
+  "name": "local-agent-plugins",
   "interface": {
-    "displayName": "Local Rollbar Plugins"
+    "displayName": "Local Agent Plugins"
   },
   "plugins": [
     {

@@ -42,13 +42,15 @@ plugin:
 
 ```bash
 codex plugin marketplace add https://github.com/jgtomas/agents_plugins.git
-codex plugin marketplace upgrade local-rollbar-plugins
-codex plugin add superpowers-ruby@local-rollbar-plugins
+codex plugin marketplace upgrade local-agent-plugins
+codex plugin add superpowers-ruby@local-agent-plugins
 ```
 
-Use `codex plugin marketplace upgrade local-rollbar-plugins` when the
-marketplace is already registered and its snapshot needs refreshing. Start a
-new task after installing or updating so the skill index is reloaded.
+Use `codex plugin marketplace upgrade local-agent-plugins` when the marketplace
+is already registered and its snapshot needs refreshing. If you previously
+registered this repository under its former marketplace identifier, re-register
+or refresh it so Codex picks up `local-agent-plugins`. Start a new task after
+installing or updating so the skill index is reloaded.
 
 Example prompts:
 
